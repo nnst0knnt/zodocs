@@ -1,0 +1,382 @@
+openapi: 3.0.0
+info:
+  version: 0.1.0
+  title: Sample API
+  description: サンプルのAPIドキュメント
+servers:
+  - url: http://localhost:{port}/api
+    description: ローカル環境
+    variables:
+      port:
+        default: "3000"
+tags:
+  - name: users
+    description: ユーザー情報に関連するエンドポイント
+components:
+  schemas:
+    🔍 GetUsersQuery:
+      type: object
+      properties:
+        page:
+          type: number
+          description: |-
+            ページ番号
+            <br><br>
+          example: 1
+        limit:
+          type: number
+          description: |-
+            取得件数
+            <br><br>
+          example: 10
+      required:
+        - page
+        - limit
+    💬 GetUsersResponse 200:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+      example: &a1
+        - id: 1
+          name: 佐藤 太郎
+        - id: 2
+          name: 佐藤 次郎
+        - id: 3
+          name: 佐藤 三郎
+    🛤️ GetUserPath:
+      type: object
+      properties:
+        id:
+          type: number
+          description: |-
+            ユーザーID
+            <br><br>
+          example: 1
+      required:
+        - id
+    💬 GetUserResponse 200:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+      example: &a4
+        id: 1
+        name: 佐藤 太郎
+    📦 PostUserBody:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+          description: |-
+            名前
+            <br><br>
+      required:
+        - name
+      example: &a2
+        name: 佐藤 太郎
+    💬 PostUserResponse 200:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+      example: &a3
+        id: 1
+        name: 佐藤 太郎
+    📦 PatchUserBody:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 100
+          description: |-
+            名前
+            <br><br>
+      required:
+        - name
+      example: &a5
+        name: 田中 太郎
+    🛤️ PatchUserPath:
+      type: object
+      properties:
+        id:
+          type: number
+          description: |-
+            ユーザーID
+            <br><br>
+          example: 1
+      required:
+        - id
+    💬 PatchUserResponse 200:
+      type: object
+      properties:
+        id:
+          type: number
+          description: |-
+            ユーザーID
+            <br><br>
+        name:
+          type: string
+          description: |-
+            名前
+            <br><br>
+      required:
+        - id
+        - name
+      example: &a6
+        id: 1
+        name: 田中 太郎
+    🛤️ DeleteUserPath:
+      type: object
+      properties:
+        id:
+          type: number
+          description: |-
+            ユーザーID
+            <br><br>
+          example: 1
+      required:
+        - id
+    💬 DeleteUserResponse 200:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      required:
+        - id
+        - name
+      example: &a7
+        id: 1
+        name: 佐藤 太郎
+  parameters: {}
+paths:
+  /users:
+    get:
+      operationId: get-users
+      tags:
+        - users
+      description: ページネーションされたユーザー一覧を取得する
+      summary: ユーザー一覧を取得する
+      parameters:
+        - schema:
+            type: number
+            description: |-
+              ページ番号
+              <br><br>
+            example: 1
+          required: true
+          description: |-
+            ページ番号
+            <br><br>
+          name: page
+          in: query
+        - schema:
+            type: number
+            description: |-
+              取得件数
+              <br><br>
+            example: 10
+          required: true
+          description: |-
+            取得件数
+            <br><br>
+          name: limit
+          in: query
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                  - id
+                  - name
+                example: *a1
+    post:
+      operationId: post-user
+      tags:
+        - users
+      description: 新規にユーザーを作成する
+      summary: ユーザーを作成する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 100
+                  description: |-
+                    名前
+                    <br><br>
+              required:
+                - name
+              example: *a2
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                  - id
+                  - name
+                example: *a3
+  /users/{id}:
+    get:
+      operationId: get-user
+      tags:
+        - users
+      description: 指定されたIDと紐づくユーザーを取得する
+      summary: ユーザーを取得する
+      parameters:
+        - schema:
+            type: number
+            description: |-
+              ユーザーID
+              <br><br>
+            example: 1
+          required: true
+          description: |-
+            ユーザーID
+            <br><br>
+          name: id
+          in: path
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                  - id
+                  - name
+                example: *a4
+    patch:
+      operationId: patch-user
+      tags:
+        - users
+      description: 指定されたIDと紐づくユーザーを更新する
+      summary: ユーザーを更新する
+      parameters:
+        - schema:
+            type: number
+            description: |-
+              ユーザーID
+              <br><br>
+            example: 1
+          required: true
+          description: |-
+            ユーザーID
+            <br><br>
+          name: id
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 100
+                  description: |-
+                    名前
+                    <br><br>
+              required:
+                - name
+              example: *a5
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: |-
+                      ユーザーID
+                      <br><br>
+                  name:
+                    type: string
+                    description: |-
+                      名前
+                      <br><br>
+                required:
+                  - id
+                  - name
+                example: *a6
+    delete:
+      operationId: deleteUser
+      tags:
+        - users
+      description: 指定されたIDと紐づくユーザーを削除する
+      summary: ユーザーを削除する
+      parameters:
+        - schema:
+            type: number
+            description: |-
+              ユーザーID
+              <br><br>
+            example: 1
+          required: true
+          description: |-
+            ユーザーID
+            <br><br>
+          name: id
+          in: path
+      responses:
+        "200":
+          description: "200"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                required:
+                  - id
+                  - name
+                example: *a7
