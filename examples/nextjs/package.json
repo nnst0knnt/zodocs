@@ -1,0 +1,51 @@
+{
+  "name": "nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write .",
+    "eslint": "next lint",
+    "eslint:fix": "next lint --fix",
+    "tsc": "tsc --noEmit",
+    "format": "npm run prettier && npm run eslint:fix && npm run tsc",
+    "docs": "zodocs",
+    "prisma:format": "npx prisma format",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "npx prisma db seed",
+    "prisma:fresh": "prisma migrate reset --force",
+    "prisma:studio": "npx prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/lodash": "^4.17.15",
+    "@types/node": "^20.17.17",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "lodash": "^4.17.21",
+    "postcss": "^8",
+    "prettier": "^3.5.0",
+    "prisma": "^6.3.1",
+    "sql-formatter": "^15.4.10",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "type-fest": "^4.34.0",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.1",
+    "zodocs": "file:../../sources"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

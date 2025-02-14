@@ -1,0 +1,158 @@
+{
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "gitmoji.onlyUseCustomEmoji": true,
+  "gitmoji.addCustomEmoji": [
+    {
+      "emoji": "✨",
+      "entity": "✨",
+      "code": ":sparkles:",
+      "description": "新規機能を実装した際に使用しましょう",
+      "name": "sparkles",
+      "semver": null
+    },
+    {
+      "emoji": "💄",
+      "entity": "💄",
+      "code": ":lipstick:",
+      "description": "デザインに関連する作業をした際に使用しましょう",
+      "name": "lipstick",
+      "semver": null
+    },
+    {
+      "emoji": "⚡️",
+      "entity": "⚡️",
+      "code": ":zap:",
+      "description": "既存機能に別の機能を追加した際に使用しましょう",
+      "name": "zap",
+      "semver": null
+    },
+    {
+      "emoji": "🔥",
+      "entity": "🔥",
+      "code": ":fire:",
+      "description": "機能を削除した際に使用しましょう",
+      "name": "fire",
+      "semver": null
+    },
+    {
+      "emoji": "✅",
+      "entity": "✅",
+      "code": ":white_check_mark:",
+      "description": "テストを追加、更新、合格した際に使用しましょう",
+      "name": "white_check_mark",
+      "semver": null
+    },
+    {
+      "emoji": "🐛",
+      "entity": "🐛",
+      "code": ":bug:",
+      "description": "バグを修正した際に使用しましょう",
+      "name": "bug",
+      "semver": null
+    },
+    {
+      "emoji": "🩹",
+      "entity": "🩹",
+      "code": ":adhesive_bandage:",
+      "description": "軽微な修正はコチラを使用してしまいましょう",
+      "name": "adhesive_bandage",
+      "semver": null
+    },
+    {
+      "emoji": "🚧",
+      "entity": "🚧",
+      "code": ":construction:",
+      "description": "WIP!!! まだ作業途中です",
+      "name": "construction",
+      "semver": null
+    },
+    {
+      "emoji": "🎨",
+      "entity": "🎨",
+      "code": ":art:",
+      "description": "コードのフォーマットをした際に使用しましょう",
+      "name": "art",
+      "semver": null
+    },
+    {
+      "emoji": "♻️",
+      "entity": "♻️",
+      "code": ":recycle:",
+      "description": "コードのリファクタリングをした際に使用しましょう",
+      "name": "recycle",
+      "semver": null
+    },
+    {
+      "emoji": "🐎",
+      "entity": "🐎",
+      "code": ":racehorse:",
+      "description": "パフォーマンスの改善をした際に使用しましょう",
+      "name": "racehorse",
+      "semver": null
+    },
+    {
+      "emoji": "📝",
+      "entity": "📝",
+      "code": ":memo:",
+      "description": "ドキュメントやコメントを追加・更新した際に使用しましょう",
+      "name": "memo",
+      "semver": null
+    },
+    {
+      "emoji": "⏪️",
+      "entity": "⏪️",
+      "code": ":rewind:",
+      "description": "以前の変更を元に戻した際に使用しましょう",
+      "name": "rewind",
+      "semver": null
+    },
+    {
+      "emoji": "🚑️",
+      "entity": "🚑️",
+      "code": ":ambulance:",
+      "description": "緊急性の高いバグを修正したときに使用しましょう",
+      "name": "ambulance",
+      "semver": null
+    },
+    {
+      "emoji": "➕",
+      "entity": "➕",
+      "code": ":heavy_plus_sign:",
+      "description": "依存関係を追加した際に使用しましょう",
+      "name": "heavy_plus_sign",
+      "semver": null
+    },
+    {
+      "emoji": "⬆️",
+      "entity": "⬆️",
+      "code": ":arrow_up:",
+      "description": "依存関係をアップグレードした際に使用しましょう",
+      "name": "arrow_up",
+      "semver": null
+    },
+    {
+      "emoji": "⬇️",
+      "entity": "⬇️",
+      "code": ":arrow_down:",
+      "description": "依存関係をダウングレードした際に使用しましょう",
+      "name": "arrow_down",
+      "semver": null
+    },
+    {
+      "emoji": "🚀",
+      "entity": "🚀",
+      "code": ":rocket:",
+      "description": "デプロイに関連する作業をした際に使用しましょう",
+      "name": "rocket",
+      "semver": null
+    },
+    {
+      "emoji": "🎉",
+      "entity": "🎉",
+      "code": ":tada:",
+      "description": "おめでたいときに使用しましょう",
+      "name": "tada",
+      "semver": null
+    }
+  ]
+}
