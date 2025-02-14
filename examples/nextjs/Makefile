@@ -114,10 +114,20 @@ seed: verify-env
 fresh: verify-env
 	$(NPM_CMD) run prisma:fresh
 
-## @description Format all source files
+## @description Run linter
+## @usage make lint
+lint:
+	$(NPM_CMD) run eslint:fix
+
+## @description Format code
 ## @usage make format
 format:
-	$(NPM_CMD) run format
+	$(NPM_CMD) run prettier:fix
+
+## @description CI pipeline
+## @usage make ci
+ci:
+	$(NPM_CMD) run ci
 
 ## @description Open database console
 ## @usage make db-sh
