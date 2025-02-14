@@ -1,0 +1,55 @@
+{
+  "name": "nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "npm:deps": "ncu",
+    "npm:update-i": "ncu -i",
+    "npm:update-all": "ncu -u",
+    "prettier": "prettier --write .",
+    "eslint": "next lint",
+    "eslint:fix": "next lint --fix",
+    "tsc": "tsc --noEmit",
+    "format": "npm run prettier && npm run eslint:fix && npm run tsc",
+    "docs": "zodocs",
+    "prisma:format": "npx prisma format",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "npx prisma db seed",
+    "prisma:fresh": "prisma migrate reset --force",
+    "prisma:studio": "npx prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.4.1",
+    "next": "15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/lodash": "^4.17.15",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.0",
+    "lodash": "^4.17.21",
+    "npm-check-updates": "^17.1.15",
+    "postcss": "^8",
+    "prettier": "^3.5.2",
+    "prisma": "^6.4.1",
+    "sql-formatter": "^15.4.11",
+    "tailwindcss": "^4.0.9",
+    "tsx": "^4.19.3",
+    "type-fest": "^4.35.0",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.2",
+    "zodocs": "file:../../sources"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

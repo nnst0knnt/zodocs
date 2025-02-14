@@ -1,0 +1,81 @@
+{
+  "name": "zodocs",
+  "version": "1.0.0",
+  "description": "A documentation generator for Zod schemas",
+  "author": "nnst0knnt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nnst0knnt/zodocs"
+  },
+  "keywords": [
+    "zod",
+    "documentation",
+    "typescript",
+    "schema",
+    "openapi"
+  ],
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "npm:deps": "ncu",
+    "npm:update-i": "ncu -i",
+    "npm:update-all": "ncu -u",
+    "with-env": "dotenv -e .env",
+    "format": "prettier --write \"./**/*.{ts,json,md}\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "tsc": "tsc --noEmit",
+    "test": "vitest run",
+    "ci": "npm run format && npm run lint:fix && npm run tsc && npm run build && npm run test"
+  },
+  "type": "module",
+  "bin": {
+    "zodocs": "./bin/zodocs.sh"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js",
+      "require": "./build/index.js"
+    }
+  },
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^7.3.0",
+    "chalk": "^5.4.1",
+    "lodash": "^4.17.21",
+    "type-fest": "^4.35.0",
+    "yaml": "^2.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "@types/lodash": "4.17.15",
+    "@types/node": "^22.13.5",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "dotenv-cli": "8.0.0",
+    "eslint": "9.21.0",
+    "eslint-config-prettier": "10.0.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "npm-check-updates": "17.1.15",
+    "prettier": "3.5.2",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "5.7.3",
+    "typescript-eslint": "8.25.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "3.0.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
