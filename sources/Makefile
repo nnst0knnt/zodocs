@@ -39,21 +39,6 @@ lint-fix:
 tsc:
 	$(NPM_CMD) run tsc
 
-## @description Check for dependency updates
-## @usage make deps
-deps:
-	$(NPM_CMD) run npm:deps
-
-## @description Interactively update dependencies
-## @usage make update-deps
-update-deps:
-	$(NPM_CMD) run npm:update-i
-
-## @description Update all dependencies
-## @usage make update-deps-force
-update-deps-force:
-	$(NPM_CMD) run npm:update-all
-
 ## @description Run full CI pipeline (format, lint, type check, test)
 ## @usage make ci
 ci:
