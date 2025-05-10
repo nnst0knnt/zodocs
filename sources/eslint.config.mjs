@@ -20,7 +20,7 @@ export default [
   }),
   {
     files: ["**/*.ts"],
-    ignores: ["**/build/**", "**/node_modules/**", "**/vitest.config.*"],
+    ignores: ["**/build/**", "**/node_modules/**", "**/vitest.config.*", "**/*.test.ts"],
     languageOptions: {
       globals: {
         ...globals.node,

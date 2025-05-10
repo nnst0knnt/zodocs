@@ -32,7 +32,7 @@ describe("SchemaLoader", async () => {
   describe("load", () => {
     it("指定されたディレクトリからスキーマを読み込むこと", async () => {
       vi.mocked(fs.promises.readdir).mockResolvedValueOnce([
-        { name: "schema", isDirectory: () => true } as fs.Dirent,
+        { name: "schema", isDirectory: () => true },
       ]);
       vi.mocked(fs.existsSync).mockReturnValue(true);
       vi.doMock("/zodocs/root/schema/endpoint.ts", () => ({}));
@@ -50,10 +50,10 @@ describe("SchemaLoader", async () => {
 
     it("サブディレクトリを再帰的に検索すること", async () => {
       vi.mocked(fs.promises.readdir).mockResolvedValueOnce([
-        { name: "parent", isDirectory: () => true } as fs.Dirent,
+        { name: "parent", isDirectory: () => true },
       ]);
       vi.mocked(fs.promises.readdir).mockResolvedValueOnce([
-        { name: "schema", isDirectory: () => true } as fs.Dirent,
+        { name: "schema", isDirectory: () => true },
       ]);
       vi.mocked(fs.existsSync).mockReturnValue(true);
       vi.doMock("/zodocs/root/parent/schema/endpoint.ts", () => ({}));
@@ -68,7 +68,7 @@ describe("SchemaLoader", async () => {
 
     it("スキーマファイルが存在しない場合はスキップすること", async () => {
       vi.mocked(fs.promises.readdir).mockResolvedValueOnce([
-        { name: "schema", isDirectory: () => true } as fs.Dirent,
+        { name: "schema", isDirectory: () => true },
       ]);
       vi.mocked(fs.existsSync).mockReturnValue(false);
 
@@ -79,7 +79,7 @@ describe("SchemaLoader", async () => {
 
     it("スキーマファイルの読み込みに失敗した場合はSchemaErrorを投げること", async () => {
       vi.mocked(fs.promises.readdir).mockResolvedValueOnce([
-        { name: "schema", isDirectory: () => true } as fs.Dirent,
+        { name: "schema", isDirectory: () => true },
       ]);
       vi.mocked(fs.existsSync).mockReturnValue(true);
       vi.doMock("/zodocs/root/schema/endpoint.ts", () => {
