@@ -130,6 +130,7 @@ const toFailure = (status: HttpFailureStatus) => {
       | string
       | string[]
       | Record<string, unknown>
+      | object
       | null = null,
     code = HttpFailureCode[status],
   ) => {
