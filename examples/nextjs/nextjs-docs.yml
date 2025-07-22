@@ -19,9 +19,7 @@ components:
       properties:
         id:
           type: number
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           example: 1
       required:
         - id
@@ -44,9 +42,7 @@ components:
         name:
           type: string
           maxLength: 100
-          description: |-
-            名前
-            <br><br>
+          description: 名前
       required:
         - name
       example: &a2
@@ -56,9 +52,7 @@ components:
       properties:
         id:
           type: number
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           example: 1
       required:
         - id
@@ -67,14 +61,10 @@ components:
       properties:
         id:
           type: number
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
         name:
           type: string
-          description: |-
-            名前
-            <br><br>
+          description: 名前
       required:
         - id
         - name
@@ -86,9 +76,7 @@ components:
       properties:
         id:
           type: number
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           example: 1
       required:
         - id
@@ -110,15 +98,11 @@ components:
       properties:
         page:
           type: number
-          description: |-
-            ページ番号
-            <br><br>
+          description: ページ番号
           example: 1
         limit:
           type: number
-          description: |-
-            取得件数
-            <br><br>
+          description: 取得件数
           example: 10
       required:
         - page
@@ -148,9 +132,7 @@ components:
         name:
           type: string
           maxLength: 100
-          description: |-
-            名前
-            <br><br>
+          description: 名前
       required:
         - name
       example: &a6
@@ -180,14 +162,10 @@ paths:
       parameters:
         - schema:
             type: number
-            description: |-
-              ユーザーID
-              <br><br>
+            description: ユーザーID
             example: 1
           required: true
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           name: id
           in: path
       responses:
@@ -215,14 +193,10 @@ paths:
       parameters:
         - schema:
             type: number
-            description: |-
-              ユーザーID
-              <br><br>
+            description: ユーザーID
             example: 1
           required: true
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           name: id
           in: path
       requestBody:
@@ -234,9 +208,7 @@ paths:
                 name:
                   type: string
                   maxLength: 100
-                  description: |-
-                    名前
-                    <br><br>
+                  description: 名前
               required:
                 - name
               example: *a2
@@ -250,14 +222,10 @@ paths:
                 properties:
                   id:
                     type: number
-                    description: |-
-                      ユーザーID
-                      <br><br>
+                    description: ユーザーID
                   name:
                     type: string
-                    description: |-
-                      名前
-                      <br><br>
+                    description: 名前
                 required:
                   - id
                   - name
@@ -271,14 +239,10 @@ paths:
       parameters:
         - schema:
             type: number
-            description: |-
-              ユーザーID
-              <br><br>
+            description: ユーザーID
             example: 1
           required: true
-          description: |-
-            ユーザーID
-            <br><br>
+          description: ユーザーID
           name: id
           in: path
       responses:
@@ -307,26 +271,18 @@ paths:
       parameters:
         - schema:
             type: number
-            description: |-
-              ページ番号
-              <br><br>
+            description: ページ番号
             example: 1
           required: true
-          description: |-
-            ページ番号
-            <br><br>
+          description: ページ番号
           name: page
           in: query
         - schema:
             type: number
-            description: |-
-              取得件数
-              <br><br>
+            description: 取得件数
             example: 10
           required: true
-          description: |-
-            取得件数
-            <br><br>
+          description: 取得件数
           name: limit
           in: query
       responses:
@@ -362,9 +318,7 @@ paths:
                 name:
                   type: string
                   maxLength: 100
-                  description: |-
-                    名前
-                    <br><br>
+                  description: 名前
               required:
                 - name
               example: *a6
