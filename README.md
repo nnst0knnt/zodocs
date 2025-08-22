@@ -18,22 +18,14 @@ Zod で定義したスキーマから OpenAPI ドキュメントを自動生成�
 
 - 🚀 @asteasolutions/zod-to-openapi
 - 🚀 Zod
-- 🚀 Next.js
 - 🚀 TypeScript
-
-- 📦 Prisma
-- 📦 zod-prisma-types
-- 📦 PostgreSQL
 
 - 🛠️ ESLint
 - 🛠️ Prettier
-- 🛠️ Docker
 
 ## システム要件
 
 - Node.js 18.0.0 以上
-- Docker 24.0.0 以上
-- PostgreSQL 14.0 以上
 
 ## プロジェクト構成
 
